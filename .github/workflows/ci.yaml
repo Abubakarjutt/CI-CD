@@ -4,6 +4,11 @@ jobs:
   My-First-Job:
     runs-on: macos-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Hello
         run: |
           echo "Hello World"
+      - name: Run python file
+        run:
+          pip install -r requirements.txt
+          python ci.py
