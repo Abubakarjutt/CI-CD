@@ -18,11 +18,11 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       
       - name: Get Log
-        run: echo "log:${{LOG}}"
+        run: echo "log:${LOG}"
         env:
           LOG: ${{toJSON(github.event)}}
       - name: Print Pusher and Email
-        run: echo "${{PUSHER}} pushed this and their email is ${{EMAIL}}"
+        run: echo "${PUSHER} pushed this and their email is ${EMAIL}"
         env:
           PUSHER: ${{gitub.event.pusher.name}}
           EMAIL:  ${{github.event.pusher.email}}
