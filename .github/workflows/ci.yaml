@@ -12,15 +12,15 @@ jobs:
         run:
           pip install -r requirements.txt
           python ci.py
-      - name: log
+      - name: Get Log
         run: echo "Logs:\n${{LOG}}\n"
         env:
-          LOG: ${{toJSON(github.events)}}
+          LOG: ${{toJSON(github.event)}}
       - name: Print pusher name and email.
         run: echo "${{PUSHER}} pushed this, their email is ${{EMAIL}}"
         env:
-          PUSHER: ${{github.events.pusher.name}}
-          EMAIL: ${{github.events.pusher.name}}
+          PUSHER: ${{github.event.pusher.name}}
+          EMAIL: ${{github.event.pusher.name}}
         
           
         
