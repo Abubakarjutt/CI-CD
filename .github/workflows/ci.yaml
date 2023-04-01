@@ -15,7 +15,7 @@ jobs:
       - name: log
         run: echo "Logs:\n${{LOG}}\n"
         env:
-          LOG: ${{toJSON(github.event)}}
+          LOG: ${{toJSON(github.events)}}
       - name: Print pusher name and email.
         run: echo "${{PUSHER}} pushed this, their email is ${{EMAIL}}"
         env:
